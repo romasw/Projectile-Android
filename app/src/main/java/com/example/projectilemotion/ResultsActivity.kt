@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import com.github.mikephil.charting.charts.LineChart
+import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
@@ -38,22 +39,45 @@ class ResultsActivity : AppCompatActivity() {
             }
             return y
         }
-        
+
         val deg = intent.getDoubleExtra("DEGREE", 20.0)
         val v0 = intent.getDoubleExtra("VELOCITY", 45.0)
         val x = euler(v0 * cos((deg/180.0)*PI), 0.0, 10, 0.0)
         val y = euler(v0 * sin((deg/180.0)*PI), 0.0, 10,  -9.8)
         val degView = findViewById<TextView>(R.id.degtext)
         val veloView = findViewById<TextView>(R.id.velotext)
+        val xmaxView = findViewById<TextView>(R.id.xmaxtext)
+        val ymaxView = findViewById<TextView>(R.id.ymaxtext)
 
         val chart: LineChart = findViewById(R.id.line_chart);
 
+
         val value1: ArrayList<Entry> = ArrayList()
+        var xmax = 0.toFloat()
+        var ymax = 0.toFloat()
         for ((i) in x.withIndex()) {
-            if(y[i].toFloat() > 0.0){
+            if(y[i].toFloat() > 0.0 || i==0){
                 value1.add(Entry(x[i].toFloat(),y[i].toFloat()))
+                if(xmax < x[i].toFloat()){
+                    xmax = x[i].toFloat()
+                }
+                if(ymax < y[i].toFloat()){
+                    ymax = y[i].toFloat()
+                }
+            } else {
+                break;
             }
         }
+        if(xmax >= ymax){
+            chart.xAxis.axisMaximum = xmax + 5
+            chart.axisLeft.axisMaximum = xmax + 5
+        }else{
+            chart.xAxis.axisMaximum = ymax + 5
+            chart.axisLeft.axisMaximum = ymax + 5
+        }
+        chart.axisRight.setDrawLabels(false)
+        chart.xAxis.position = XAxis.XAxisPosition.BOTTOM
+        chart.description.text = ""
 
         //chartに設定
         val dataSet1 = LineDataSet(value1, "Projectile Motion")
@@ -67,6 +91,10 @@ class ResultsActivity : AppCompatActivity() {
 
         degView.text = deg.toString()
         veloView.text = v0.toString()
+        val xmaxstr = xmax.toString()
+        val ymaxstr = ymax.toString()
+        xmaxView.text = "$xmaxstr m"
+        ymaxView.text = "$ymaxstr m"
 
         val back = findViewById<Button>(R.id.back)
         back.setOnClickListener {
