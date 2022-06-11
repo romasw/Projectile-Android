@@ -20,17 +20,8 @@ class ResultsActivity : AppCompatActivity() {
 
         //数値計算関数
         fun euler(v0: Double, y0: Double, tmax: Int, g: Double, n: Int = 12): DoubleArray {
-            //t0～tmaxを2**n+1個に分割
-            val t = DoubleArray((2.0.pow(n)+1.0).toInt())
             //tの刻み幅⊿t
             val dt = tmax.toDouble() / (2.0.pow(n)+1.0)
-            for ((i) in t.withIndex()) {
-                if(i>0){
-                    t[i] = t[i-1] + dt
-                }else{
-                    t[i] = 0.0
-                }
-            }
 
             //tと同じ形状の未初期化配列を生成
             val v = DoubleArray((2.0.pow(n)+1.0).toInt())
@@ -47,6 +38,7 @@ class ResultsActivity : AppCompatActivity() {
             }
             return y
         }
+        
         val deg = intent.getDoubleExtra("DEGREE", 20.0)
         val v0 = intent.getDoubleExtra("VELOCITY", 45.0)
         val x = euler(v0 * cos((deg/180.0)*PI), 0.0, 10, 0.0)
