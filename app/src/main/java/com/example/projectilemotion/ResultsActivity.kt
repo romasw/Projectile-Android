@@ -47,7 +47,7 @@ class ResultsActivity : AppCompatActivity() {
         val x = euler(v0 * cos((deg/180.0)*PI), 0.0, 10, 0.0)
         val y = euler(v0 * sin((deg/180.0)*PI), 0.0, 10,  -9.8)
 
-        //図の描画
+        //以下、図の描画関係
         val chart: LineChart = findViewById(R.id.line_chart);
         val value1: ArrayList<Entry> = ArrayList()
         //x軸とy軸の最高到達点を探す
@@ -64,7 +64,7 @@ class ResultsActivity : AppCompatActivity() {
                     ymax = y[i].toFloat()
                 }
             } else {
-                //y座標が負ならループを抜ける（斜方投射において、負になってから正に戻ることはない。）
+                //y座標が負ならループを抜ける（斜方投射において、負になってから正に戻ることはないため）
                 break;
             }
         }
@@ -80,20 +80,21 @@ class ResultsActivity : AppCompatActivity() {
         chart.xAxis.position = XAxis.XAxisPosition.BOTTOM //x軸の目盛りを図の下側に表示
         chart.description.text = "" //図の説明文を消去
 
-        val dataSet1 = LineDataSet(value1, "Projectile Motion") //図にデータを設定
-        dataSet1.color = Color.RED //赤色に設定
+        val dataSet1 = LineDataSet(value1, "Projectile Motion")
+        dataSet1.color = Color.CYAN
 
         val dataSets: MutableList<ILineDataSet> = ArrayList()
         dataSets.add(dataSet1)
 
         chart.data = LineData(dataSets)
         chart.invalidate() // refresh
+        //図の描画ここまで
 
         //テキストの書き換え
-        val degView = findViewById<TextView>(R.id.degtext)
-        val veloView = findViewById<TextView>(R.id.velotext)
-        val xmaxView = findViewById<TextView>(R.id.xmaxtext)
-        val ymaxView = findViewById<TextView>(R.id.ymaxtext)
+        val degView = findViewById<TextView>(R.id.degtext) //投射角度
+        val veloView = findViewById<TextView>(R.id.velotext) //初速度
+        val xmaxView = findViewById<TextView>(R.id.xmaxtext) //飛距離
+        val ymaxView = findViewById<TextView>(R.id.ymaxtext) //最高高度
         degView.text = deg.toString()
         veloView.text = v0.toString()
         val xmaxstr = xmax.toString()
@@ -101,6 +102,7 @@ class ResultsActivity : AppCompatActivity() {
         xmaxView.text = "$xmaxstr m"
         ymaxView.text = "$ymaxstr m"
 
+        //MainActivityに戻る（ResultsActivityの終了）
         val back = findViewById<Button>(R.id.back)
         back.setOnClickListener {
             finish()
