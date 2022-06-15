@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
          next.setOnClickListener {
              //Intentオブジェクト生成、遷移画面定義
              val nextIntent = Intent(this, ResultsActivity::class.java)
-             //Intentオブジェクトにテキストの内容をプットする
+             //Intentオブジェクトに入力内容をプットする
              nextIntent.putExtra("DEGREE", deg.text.toString().toDouble())
              nextIntent.putExtra("VELOCITY", velocity.text.toString().toDouble())
              //次のActivity実行
