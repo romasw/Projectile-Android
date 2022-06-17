@@ -18,6 +18,12 @@ class MainActivity : AppCompatActivity() {
 
          next.setOnClickListener {
              //Intentオブジェクト生成、遷移画面定義
+             if(deg.text.toString().toInt()>=0 && deg.text.toString().toInt()<=90){
+
+             }
+             else{
+
+             }
              val nextIntent = Intent(this, ResultsActivity::class.java)
              //Intentオブジェクトに入力内容をプットする
              nextIntent.putExtra("DEGREE", deg.text.toString().toDouble())
