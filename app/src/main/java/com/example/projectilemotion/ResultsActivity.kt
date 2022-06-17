@@ -18,6 +18,20 @@ class ResultsActivity : AppCompatActivity() {
         super.onCreate(ResultsActivity)
         setContentView(R.layout.activity_intent_test)
 
+        //言語設定
+        val lang = intent.getStringExtra("LANGUAGE")
+        val xmaxView = findViewById<TextView>(R.id.xmaxView)
+        val ymaxView = findViewById<TextView>(R.id.ymaxView)
+//        val degView = findViewById<TextView>(R.id.degView)
+//        val veloView = findViewById<TextView>(R.id.veloView)
+
+        if(lang == "ja"){
+            xmaxView.text = "飛距離"
+            ymaxView.text = "最高到達点"
+//            degView.text = "投射角度"
+//            veloView.text = "初速度"
+        }
+
         //オイラー法での数値計算のための関数
         fun euler(v0: Double, y0: Double, tmax: Int, g: Double, n: Int = 12): DoubleArray {
             //tの刻み幅⊿t
@@ -91,16 +105,16 @@ class ResultsActivity : AppCompatActivity() {
         //図の描画ここまで
 
         //テキストの書き換え
-        val degView = findViewById<TextView>(R.id.degtext) //投射角度
-        val veloView = findViewById<TextView>(R.id.velotext) //初速度
-        val xmaxView = findViewById<TextView>(R.id.xmaxtext) //飛距離
-        val ymaxView = findViewById<TextView>(R.id.ymaxtext) //最高高度
-        degView.text = deg.toString()
-        veloView.text = v0.toString()
+        val degtext = findViewById<TextView>(R.id.degtext) //投射角度
+        val velotext = findViewById<TextView>(R.id.velotext) //初速度
+        val xmaxtext = findViewById<TextView>(R.id.xmaxtext) //飛距離
+        val ymaxtext = findViewById<TextView>(R.id.ymaxtext) //最高高度
+        degtext.text = deg.toString()
+        velotext.text = v0.toString()
         val xmaxstr = xmax.toString()
         val ymaxstr = ymax.toString()
-        xmaxView.text = "$xmaxstr m"
-        ymaxView.text = "$ymaxstr m"
+        xmaxtext.text = "$xmaxstr m"
+        ymaxtext.text = "$ymaxstr m"
 
         //MainActivityに戻る（ResultsActivityの終了）
         val back = findViewById<Button>(R.id.back)
