@@ -22,14 +22,14 @@ class ResultsActivity : AppCompatActivity() {
         val lang = intent.getStringExtra("LANGUAGE")
         val xmaxView = findViewById<TextView>(R.id.xmaxView)
         val ymaxView = findViewById<TextView>(R.id.ymaxView)
-        val degView = findViewById<TextView>(R.id.degView)
-        val veloView = findViewById<TextView>(R.id.veloView)
+//        val degView = findViewById<TextView>(R.id.degView)
+//        val veloView = findViewById<TextView>(R.id.veloView)
 
         if(lang == "ja"){
             xmaxView.text = "飛距離"
             ymaxView.text = "最高到達点"
-            degView.text = "投射角度"
-            veloView.text = "初速度"
+//            degView.text = "投射角度"
+//            veloView.text = "初速度"
         }
 
         //オイラー法での数値計算のための関数
