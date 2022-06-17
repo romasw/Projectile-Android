@@ -28,7 +28,14 @@ class MainActivity : AppCompatActivity() {
 
              }
              else{
+                 error1.visibility= View.VISIBLE
+             }
 
+             if(velocity.text.toString().toInt()>=0 && velocity.text.toString().toInt()<=100){
+
+             }
+             else{
+                 error2.visibility= View.VISIBLE
              }
              val nextIntent = Intent(this, ResultsActivity::class.java)
              //Intentオブジェクトに入力内容をプットする
