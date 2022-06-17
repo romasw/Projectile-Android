@@ -3,14 +3,53 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:backgroundTint="#FFFFFF">
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="161dp"
+        android:layout_marginEnd="162dp"
+        android:layout_marginBottom="40dp"
+        android:text="BACK"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/line_chart"
+        android:layout_width="379dp"
+        android:layout_height="379dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="16dp"
+        android:background="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/degView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginBottom="4dp"
+        android:text="Projection Angle"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/degtext"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/degtext"
         android:layout_width="100dp"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:layout_marginStart="55dp"
-        android:layout_marginTop="580dp"
+        android:layout_marginTop="568dp"
         android:layout_marginEnd="40dp"
         android:gravity="center"
         android:text="Angle"
@@ -20,25 +59,22 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/xmaxtext"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="456dp"
-        android:layout_marginEnd="22dp"
-        android:gravity="center"
-        android:text="X_MAX"
+        android:id="@+id/veloView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="4dp"
+        android:text="Initial Velocity"
         android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/ymaxtext"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/velotext"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/velotext"
         android:layout_width="100dp"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="580dp"
+        android:layout_marginTop="568dp"
         android:layout_marginEnd="55dp"
         android:gravity="center"
         android:text="Velocity"
@@ -48,64 +84,28 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/ymaxtext"
+        android:id="@+id/ymaxView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="80dp"
+        android:text="Y MAX"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/ymaxtext"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/xmaxtext"
         android:layout_width="150dp"
         android:layout_height="40dp"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="456dp"
-        android:layout_marginEnd="55dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="480dp"
+        android:layout_marginEnd="22dp"
         android:gravity="center"
-        android:text="Y_MAX"
+        android:text="X_MAX"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/xmaxtext"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="161dp"
-        android:layout_marginEnd="162dp"
-        android:layout_marginBottom="16dp"
-        android:text="BACK"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <com.github.mikephil.charting.charts.LineChart
-        android:id="@+id/line_chart"
-        android:layout_width="379dp"
-        android:layout_height="379dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ymaxtext"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginBottom="4dp"
-        android:text="Projection Angle"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/degtext"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="4dp"
-        android:text="Initial Velocity"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/velotext"
-        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/xmaxView"
@@ -118,12 +118,16 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/ymaxView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="80dp"
-        android:text="Y MAX"
+        android:id="@+id/ymaxtext"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="480dp"
+        android:layout_marginEnd="55dp"
+        android:gravity="center"
+        android:text="Y_MAX"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/ymaxtext"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/xmaxtext"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
