@@ -24,12 +24,14 @@ class ResultsActivity : AppCompatActivity() {
         val ymaxView = findViewById<TextView>(R.id.ymaxView)
         val degView = findViewById<TextView>(R.id.degView)
         val veloView = findViewById<TextView>(R.id.veloView)
+        val restext = findViewById<TextView>(R.id.res)
 
         if(lang == "ja"){
             xmaxView.text = "飛距離"
             ymaxView.text = "最高到達点"
-            degView.text = "投射角度"
-            veloView.text = "初速度"
+            degView.text = "　　投射角度"
+            veloView.text = "初速度　　"
+            restext.text = "結果"
         }
 
         //オイラー法での数値計算のための関数
@@ -109,8 +111,10 @@ class ResultsActivity : AppCompatActivity() {
         val velotext = findViewById<TextView>(R.id.velotext) //初速度
         val xmaxtext = findViewById<TextView>(R.id.xmaxtext) //飛距離
         val ymaxtext = findViewById<TextView>(R.id.ymaxtext) //最高高度
-        degtext.text = deg.toString()
-        velotext.text = v0.toString()
+        val degstr = deg.toString()
+        val velostr = v0.toString()
+        degtext.text = "$degstr °"
+        velotext.text = "$velostr m/s"
         val xmaxstr = xmax.toString()
         val ymaxstr = ymax.toString()
         xmaxtext.text = "$xmaxstr m"

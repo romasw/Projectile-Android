@@ -73,16 +73,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="154dp"
-        android:layout_marginTop="27dp"
         android:layout_marginEnd="169dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="26dp"
         android:backgroundTint="@android:color/holo_blue_dark"
         android:text="BACK"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/degtext"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/line_chart"
@@ -99,7 +97,7 @@
         android:id="@+id/degView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
+        android:layout_marginStart="32dp"
         android:layout_marginBottom="4dp"
         android:text="Projection Angle"
         android:textAlignment="center"
@@ -112,8 +110,8 @@
         android:id="@+id/veloView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="80dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="8dp"
         android:text="Initial Velocity"
         android:textAlignment="center"
         android:textSize="20sp"
@@ -125,7 +123,7 @@
         android:id="@+id/xmaxView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
+        android:layout_marginStart="80dp"
         android:text="X MAX"
         android:textAlignment="center"
         android:textSize="20sp"
@@ -137,7 +135,7 @@
         android:id="@+id/ymaxView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="110dp"
+        android:layout_marginEnd="76dp"
         android:text="Y MAX"
         android:textAlignment="center"
         android:textSize="20sp"
@@ -146,7 +144,7 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/res"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="186dp"
