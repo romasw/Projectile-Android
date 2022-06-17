@@ -23,28 +23,28 @@ class MainActivity : AppCompatActivity() {
         val error2 = findViewById<TextView>(R.id.textView7)
         error2.visibility= View.INVISIBLE
         var err =0
-         next.setOnClickListener {
-             //Intentオブジェクト生成、遷移画面定義
+        next.setOnClickListener {
 
-             if(deg.text.toString().toInt()<0 && deg.text.toString().toInt()>90){
-                 err=1
-                 error1.visibility= View.VISIBLE
-             }
+            //Intentオブジェクト生成、遷移画面定義
+            if(deg.text.toString().toInt()<0 && deg.text.toString().toInt()>90){
+                err=1
+                error1.visibility= View.VISIBLE
+            }
 
 
-             if(velocity.text.toString().toInt()<0 && velocity.text.toString().toInt()>100 ){
-                 err=1
-                 error2.visibility= View.VISIBLE
-             }
+            if(velocity.text.toString().toInt()<0 && velocity.text.toString().toInt()>100 ){
+                err=1
+                error2.visibility= View.VISIBLE
+            }
 
-             if(err==0) {
+            if(err==0) {
                  val nextIntent = Intent(this, ResultsActivity::class.java)
                  //Intentオブジェクトに入力内容をプットする
                  nextIntent.putExtra("DEGREE", deg.text.toString().toDouble())
                  nextIntent.putExtra("VELOCITY", velocity.text.toString().toDouble())
                  //次のActivity実行
                  startActivity(nextIntent)
-             }
+            }
          }
     }
 }
