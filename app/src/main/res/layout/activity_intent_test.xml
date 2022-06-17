@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    android:backgroundTint="#FFFFFF">
+    android:backgroundTint="#F2FEFF">
 
     <Button
         android:id="@+id/back"
@@ -13,7 +13,8 @@
         android:layout_height="0dp"
         android:layout_marginStart="161dp"
         android:layout_marginEnd="162dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="36dp"
+        android:backgroundTint="@android:color/holo_blue_dark"
         android:text="BACK"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,9 +26,9 @@
         android:layout_width="379dp"
         android:layout_height="379dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="16dp"
-        android:background="#FFFFFF"
+        android:background="#00FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,10 +38,12 @@
         android:id="@+id/degView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
+        android:layout_marginStart="44dp"
         android:layout_marginBottom="4dp"
         android:text="Projection Angle"
+        android:textAlignment="center"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/degtext"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -53,6 +56,7 @@
         android:layout_marginEnd="40dp"
         android:gravity="center"
         android:text="Angle"
+        android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/velotext"
         app:layout_constraintStart_toStartOf="parent"
@@ -65,7 +69,11 @@
         android:layout_marginEnd="48dp"
         android:layout_marginBottom="4dp"
         android:text="Initial Velocity"
+        android:textAlignment="center"
         android:textSize="20sp"
+        android:textStyle="bold"
+        android:typeface="normal"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/velotext"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -78,6 +86,7 @@
         android:layout_marginEnd="55dp"
         android:gravity="center"
         android:text="Velocity"
+        android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/degtext"
@@ -89,7 +98,9 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="80dp"
         android:text="Y MAX"
+        android:textAlignment="center"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/ymaxtext"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -102,6 +113,7 @@
         android:layout_marginEnd="22dp"
         android:gravity="center"
         android:text="X_MAX"
+        android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/ymaxtext"
         app:layout_constraintStart_toStartOf="parent"
@@ -114,6 +126,7 @@
         android:layout_marginStart="84dp"
         android:text="X MAX"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/xmaxtext"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -126,8 +139,27 @@
         android:layout_marginEnd="55dp"
         android:gravity="center"
         android:text="Y_MAX"
+        android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/xmaxtext"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        android:text="Result"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/line_chart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
