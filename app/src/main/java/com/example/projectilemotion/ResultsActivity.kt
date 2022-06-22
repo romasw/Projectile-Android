@@ -16,7 +16,7 @@ import kotlin.math.*
 class ResultsActivity : AppCompatActivity() {
     override fun onCreate(ResultsActivity: Bundle?) {
         super.onCreate(ResultsActivity)
-        setContentView(R.layout.activity_intent_test)
+        setContentView(R.layout.activity_results)
 
         //言語設定
         val lang = intent.getStringExtra("LANGUAGE")
